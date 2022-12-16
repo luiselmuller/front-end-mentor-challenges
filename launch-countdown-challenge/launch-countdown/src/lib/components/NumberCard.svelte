@@ -1,15 +1,14 @@
 <script>
-    import { shouldFlip } from '$lib/stores';
-
     export let number = "";
-    console.log($shouldFlip)
+
+    export let shouldFlip = false;
 </script>
 
 <section class="text-center">
     <div class="bg-very-dark-blue h-[200px] w-[200px] rounded-xl mb-5">
         <!-- Top Half Card-->
         <div id="topCard" class="bg-primary-blue h-[93px] w-[200px] rounded-t-xl overflow-hidden flex flex-col justify-start items-center
-            top-card-inverted-corner absolute z-50 {$shouldFlip ? 'flipTop' : ''}">
+            top-card-inverted-corner absolute z-50 {shouldFlip ? 'flipTop' : ''}">
             <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
                 {number}
             </span>
@@ -28,7 +27,7 @@
         
         <!-- Bottom Half Card -->
         <div class="absolute bg-primary-blue h-[93px] w-[200px] rounded-b-xl overflow-hidden  flex flex-col justify-end items-center
-            bottom-card-inverted-corner z-50 {$shouldFlip ? 'flipBottom' : ''}">
+            bottom-card-inverted-corner z-50 {shouldFlip ? 'flipBottom' : ''}">
             <span class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
                 <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
                     {number}
@@ -69,11 +68,11 @@
 
     /* Flip animation */
     .flipTop {
-        animation: flipCard 0.8s ease-in;
+        animation: flipCard 0.8s linear;
         transform-origin: bottom;
     }
     .flipBottom {
-        animation: unflipCard 0.8s ease-out;
+        animation: unflipCard 0.8s linear;
         transform-origin: top;
     }
 

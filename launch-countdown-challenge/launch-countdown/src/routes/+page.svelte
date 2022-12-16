@@ -1,45 +1,41 @@
 <script>
     import NumberCard from '../lib/components/NumberCard.svelte';
-    import { createEventDispatcher } from 'svelte';
-  import { shouldFlip } from '$lib/stores';
 
     // Countdown to display
-    let day = 10, hour = 8, minute = 37, second = 46;
-    
-    // Logic for the countdown
-    setInterval(() => {
-        shouldFlip.update(n => true);
-        shouldFlip.update(n => false);
-        second -= second > 0 ? 1 : 0;
+    let day = 1, hour = 1, minute = 1, second = 5;
+    let flipDay = false, flipHour = false, flipMinute = false, flipSecond = false;
 
+    $:countdown = [
+        {unit: day === 1? "day" : "days", time: day.toString(), shouldFlip: flipDay},
+        {unit: hour === 1 ? "hour" : "hours", time: hour.toString(), shouldFlip: flipHour},
+        {unit: minute === 1 ? "minute" : "minutes", time: minute.toString(), shouldFlip: flipMinute},
+        {unit: second === 1 ? "second" : "seconds", time: second.toString(), shouldFlip: flipSecond}
+    ]
+
+    // Logic for the countdown (could definitely be done better)
+    setInterval(() => {
+        second -= second > 0 ? 1 : 0;
+        flipSecond = true;
+        setTimeout(() => { flipSecond = false }, 700);
         if(second === 0  && minute != 0){
             minute -= minute > 0 ? 1 : 0;
             second = 59;
-            shouldFlip.update(n => true);
-            shouldFlip.update(n => false);
+            flipMinute = true;
+            setTimeout(() => { flipMinute = false }, 700);
         }
         else if(minute === 0 && hour != 0){
             hour -= hour > 0 ? 1 : 0;
             minute = 59;
-            shouldFlip.update(n => true);
-            shouldFlip.update(n => false);
+            flipHour = true;
+            setTimeout(() => { flipHour = false }, 700);
         }
         else if(hour === 0  && day != 0){
             day -= day > 0 ? 1 : 0;
             hour = 23;
-            shouldFlip.update(n => true);
-            shouldFlip.update(n => false);
+            flipDay = true;
+            setTimeout(() => { flipDay = false }, 700);
         }
     }, 1000)
-    
-
-    $:countdown = [
-        {unit: day === 1? "day" : "days", time: day.toString()},
-        {unit: hour === 1 ? "hour" : "hours", time: hour.toString()},
-        {unit: minute === 1 ? "minute" : "minutes", time: minute.toString()},
-        {unit: second === 1 ? "second" : "seconds", time: second.toString()}
-    ]
-
 
 </script>
 
@@ -53,7 +49,7 @@
         transition-all">
         <!-- Cards -->
         {#each countdown as count(count.unit)}
-            <NumberCard number={count.time.split("").length < 2 ? "0" + count.time : count.time}>
+            <NumberCard number={count.time.split("").length < 2 ? "0" + count.time : count.time} shouldFlip={count.shouldFlip} >
                 <span slot="unit">
                     {count.unit}
                 </span>
