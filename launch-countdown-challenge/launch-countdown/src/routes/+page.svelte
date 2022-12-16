@@ -1,34 +1,37 @@
 <script>
     import NumberCard from '../lib/components/NumberCard.svelte';
+    import { createEventDispatcher } from 'svelte';
+  import { shouldFlip } from '$lib/stores';
 
     // Countdown to display
-    let day = 10, hour = 2, minute = 1, second = 5;
-
-    // Days, Hours, Minutes, Seconds
+    let day = 10, hour = 8, minute = 37, second = 46;
+    
+    // Logic for the countdown
     setInterval(() => {
+        shouldFlip.update(n => true);
+        shouldFlip.update(n => false);
         second -= second > 0 ? 1 : 0;
-        if(second === 0){
-            minute--;
-            second = 60;
-        }
-        else if(minute === 0){
-            hour--;
-            minute = 60;
-        }
-        else if(hour === 0){
-            day--;
-            hour = 24;
-        }
-        else if(day === 0){
-            setTimeout(() => {
-                day = 10;
-                hour = 20;
-                minute = 42;
-                second = 15;
-            }, 5000)
-        }
 
+        if(second === 0  && minute != 0){
+            minute -= minute > 0 ? 1 : 0;
+            second = 59;
+            shouldFlip.update(n => true);
+            shouldFlip.update(n => false);
+        }
+        else if(minute === 0 && hour != 0){
+            hour -= hour > 0 ? 1 : 0;
+            minute = 59;
+            shouldFlip.update(n => true);
+            shouldFlip.update(n => false);
+        }
+        else if(hour === 0  && day != 0){
+            day -= day > 0 ? 1 : 0;
+            hour = 23;
+            shouldFlip.update(n => true);
+            shouldFlip.update(n => false);
+        }
     }, 1000)
+    
 
     $:countdown = [
         {unit: day === 1? "day" : "days", time: day.toString()},
@@ -36,6 +39,7 @@
         {unit: minute === 1 ? "minute" : "minutes", time: minute.toString()},
         {unit: second === 1 ? "second" : "seconds", time: second.toString()}
     ]
+
 
 </script>
 
@@ -47,12 +51,9 @@
     <!-- Countdown Container -->
     <div class="flex md:gap-10 gap-2 justify-center items-center w-fit h-64 sm:mt-28 lg:scale-100 sm:scale-75 scale-[.4]
         transition-all">
-        <!-- Number Cards -->
-        {#each countdown as count (count.unit)}
-            <NumberCard>
-                <span slot="number">
-                    {count.time.split("").length < 2 ? "0" + count.time : count.time}
-                </span>
+        <!-- Cards -->
+        {#each countdown as count(count.unit)}
+            <NumberCard number={count.time.split("").length < 2 ? "0" + count.time : count.time}>
                 <span slot="unit">
                     {count.unit}
                 </span>

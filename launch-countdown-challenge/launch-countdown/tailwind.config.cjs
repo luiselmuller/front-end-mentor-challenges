@@ -18,7 +18,7 @@ module.exports = {
       },
       fontFamily: {
         'red-hat': '"Red Hat Text"'
-      }
+      },
     }
   },
   plugins: []
