@@ -13,8 +13,8 @@ module.exports = {
         'above-hills': 'hsl(270,18%,14%)'
       },
       backgroundImage: {
-        'stars': 'url("src/public/bg-stars.svg")',
-        'hills': 'url("src/public/pattern-hills.svg")'
+        'stars': 'url("bg-stars.svg")',
+        'hills': 'url("pattern-hills.svg")'
       },
       fontFamily: {
         'red-hat': '"Red Hat Text"'
