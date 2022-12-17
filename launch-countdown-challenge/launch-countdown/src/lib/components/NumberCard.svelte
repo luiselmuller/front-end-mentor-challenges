@@ -2,12 +2,25 @@
     export let number = "";
 
     export let shouldFlip = false;
+
+    function subNumber() {
+        let numberLeftSide = number.split('')[0];
+        let numberRightSide = number.split('')[1];
+        let result = '';
+
+        if(+numberRightSide > 0 || +numberLeftSide >= 0) {
+            result = +numberLeftSide === 0 ? (+number.split('')[1] - 1).toString() : (+number - 1).toString();
+        }
+
+        return result.split('').length < 2 ? '0' + result : result;
+    }
+
 </script>
 
 <section class="text-center">
     <div class="bg-very-dark-blue h-[200px] w-[200px] rounded-xl mb-5">
         <!-- Top Half Card-->
-        <div id="topCard" class="bg-primary-blue h-[93px] w-[200px] rounded-t-xl overflow-hidden flex flex-col justify-start items-center
+        <div class="bg-primary-blue h-[93px] w-[200px] rounded-t-xl overflow-hidden flex flex-col justify-start items-center
             top-card-inverted-corner absolute z-50 {shouldFlip ? 'flipTop' : ''}">
             <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
                 {number}
@@ -19,7 +32,12 @@
         <div class="bg-primary-blue h-[93px] w-[200px] rounded-t-xl overflow-hidden flex flex-col justify-start items-center
             top-card-inverted-corner">
             <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
-                {number}
+                <!-- Might be able to make this better in the future -->
+                {#if shouldFlip && subNumber() != "-1" && number != "00"}
+                    {subNumber()}
+                {:else}
+                    {number}
+                {/if}
             </span>
             <!-- Dark overlay -->
             <div class="shadow-[inset_0_-100px_10px_rgba(0,0,0,0.25)] h-[93px] w-[200px] absolute rounded-t-xl"></div>
@@ -29,18 +47,18 @@
         <div class="absolute bg-primary-blue h-[93px] w-[200px] rounded-b-xl overflow-hidden  flex flex-col justify-end items-center
             bottom-card-inverted-corner z-50 {shouldFlip ? 'flipBottom' : ''}">
             <span class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
-                <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
+                {#if shouldFlip && subNumber() != "-1" && number != "00"}
+                    {subNumber()}
+                {:else}
                     {number}
-                </span>
+                {/if}
             </span>
         </div>
         <!-- Background behind bottom half -->
         <div class="bg-primary-blue h-[93px] w-[200px] rounded-b-xl overflow-hidden  flex flex-col justify-end items-center
             bottom-card-inverted-corner">
             <span class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
-                <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
-                    {number}
-                </span>
+                {number}
             </span>
         </div>
     </div>
@@ -68,11 +86,11 @@
 
     /* Flip animation */
     .flipTop {
-        animation: flipCard 0.8s linear;
+        animation: flipCard .7s linear;
         transform-origin: bottom;
     }
     .flipBottom {
-        animation: unflipCard 0.8s linear;
+        animation: unflipCard .7s linear;
         transform-origin: top;
     }
 

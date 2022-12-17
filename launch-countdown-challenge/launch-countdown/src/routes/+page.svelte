@@ -2,7 +2,7 @@
     import NumberCard from '../lib/components/NumberCard.svelte';
 
     // Countdown to display
-    let day = 1, hour = 1, minute = 1, second = 5;
+    let day = 10, hour = 6, minute = 45, second = 5;
     let flipDay = false, flipHour = false, flipMinute = false, flipSecond = false;
 
     $:countdown = [
@@ -14,26 +14,36 @@
 
     // Logic for the countdown (could definitely be done better)
     setInterval(() => {
-        second -= second > 0 ? 1 : 0;
         flipSecond = true;
-        setTimeout(() => { flipSecond = false }, 700);
+        setTimeout(() => { 
+            second -= second > 0 ? 1 : 0;
+            flipSecond = false 
+        }, 700);
         if(second === 0  && minute != 0){
-            minute -= minute > 0 ? 1 : 0;
-            second = 59;
             flipMinute = true;
-            setTimeout(() => { flipMinute = false }, 700);
+            setTimeout(() => { 
+                flipMinute = false
+                minute -= minute > 0 ? 1 : 0;
+                second = 59;
+            }, 700);
+            
         }
         else if(minute === 0 && hour != 0){
-            hour -= hour > 0 ? 1 : 0;
-            minute = 59;
             flipHour = true;
-            setTimeout(() => { flipHour = false }, 700);
+            setTimeout(() => { 
+                hour -= hour > 0 ? 1 : 0;
+                minute = 59;
+                flipHour = false 
+            }, 700);
+            
         }
         else if(hour === 0  && day != 0){
-            day -= day > 0 ? 1 : 0;
-            hour = 23;
             flipDay = true;
-            setTimeout(() => { flipDay = false }, 700);
+            setTimeout(() => { 
+                day -= day > 0 ? 1 : 0;
+                hour = 23;
+                flipDay = false 
+            }, 700);
         }
     }, 1000)
 
