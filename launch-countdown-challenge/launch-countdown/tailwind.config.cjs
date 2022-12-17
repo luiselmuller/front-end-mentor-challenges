@@ -12,10 +12,6 @@ module.exports = {
         'very-dark-blue': 'hsl(234, 17%, 12%)',
         'above-hills': 'hsl(270,18%,14%)'
       },
-      backgroundImage: {
-        'stars': 'url("bg-stars.svg")',
-        'hills': 'url("pattern-hills.svg")'
-      },
       fontFamily: {
         'red-hat': '"Red Hat Text"'
       },
