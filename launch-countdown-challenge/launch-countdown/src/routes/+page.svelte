@@ -2,7 +2,7 @@
     import NumberCard from '../lib/components/NumberCard.svelte';
 
     // Countdown to display
-    let day = 10, hour = 6, minute = 45, second = 5;
+    let day = 10, hour = 6, minute = 45, second = 15;
     let flipDay = false, flipHour = false, flipMinute = false, flipSecond = false;
 
     $:countdown = [
