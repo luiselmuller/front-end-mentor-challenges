@@ -1,4 +1,4 @@
-# Frontend Mentor - [Launch countdown timer](https://front-end-mentor-challenges-woad.vercel.app/)
+# Frontend Mentor - [Launch countdown timer](https://countdown-challenge-frontendmentor.vercel.app/)
 
 ![Design preview for the Launch countdown timer coding challenge](./design/desktop-preview.jpg)
 
