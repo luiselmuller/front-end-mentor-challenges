@@ -22,23 +22,23 @@
         <!-- Top Half Card-->
         <div class="bg-primary-blue h-[93px] w-[200px] rounded-t-xl overflow-hidden flex flex-col justify-start items-center
             top-card-inverted-corner absolute z-50 {shouldFlip ? 'flipTop' : ''}">
-            <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
+            <h2 class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
                 {number}
-            </span>
+            </h2>
             <!-- Dark overlay -->
             <div class="shadow-[inset_0_-100px_10px_rgba(0,0,0,0.25)] h-[93px] w-[200px] absolute rounded-t-xl"></div>
         </div>
         <!-- Background behind the top half  -->
         <div class="bg-primary-blue h-[93px] w-[200px] rounded-t-xl overflow-hidden flex flex-col justify-start items-center
             top-card-inverted-corner">
-            <span class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
+            <h2 class="text-primary-red font-bold text-[5.8rem] leading-[1] translate-y-[47px]">
                 <!-- Might be able to make this better in the future -->
                 {#if shouldFlip && subNumber() != "-1" && number != "00"}
                     {subNumber()}
                 {:else}
                     {number}
                 {/if}
-            </span>
+            </h2>
             <!-- Dark overlay -->
             <div class="shadow-[inset_0_-100px_10px_rgba(0,0,0,0.25)] h-[93px] w-[200px] absolute rounded-t-xl"></div>
         </div>
@@ -46,20 +46,20 @@
         <!-- Bottom Half Card -->
         <div class="absolute bg-primary-blue h-[93px] w-[200px] rounded-b-xl overflow-hidden  flex flex-col justify-end items-center
             bottom-card-inverted-corner z-50 {shouldFlip ? 'flipBottom' : ''}">
-            <span class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
+            <h2 class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
                 {#if shouldFlip && subNumber() != "-1" && number != "00"}
                     {subNumber()}
                 {:else}
                     {number}
                 {/if}
-            </span>
+            </h2>
         </div>
         <!-- Background behind bottom half -->
         <div class="bg-primary-blue h-[93px] w-[200px] rounded-b-xl overflow-hidden  flex flex-col justify-end items-center
             bottom-card-inverted-corner">
-            <span class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
+            <h2 class="text-primary-red font-bold text-[5.8rem] leading-[1] -translate-y-[46px]">
                 {number}
-            </span>
+            </h2>
         </div>
     </div>
 

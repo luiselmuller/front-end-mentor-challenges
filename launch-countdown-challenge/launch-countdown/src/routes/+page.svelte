@@ -50,12 +50,12 @@
 </script>
 
 <main class="h-full flex flex-col items-center font-red-hat bg-stars">
-    <h1 class="sm:text-3xl text-2xl text-center text-neutral-white uppercase font-bold tracking-[0.3em] sm:mt-32 mt-44
+    <h1 class="text-2xl text-center text-neutral-white uppercase font-bold tracking-[0.3em] sm:mt-32 mt-44
         transition-all">
         We're launching soon
     </h1>
     <!-- Countdown Container -->
-    <div class="flex md:gap-10 gap-2 justify-center items-center w-fit h-64 sm:mt-28 lg:scale-100 sm:scale-75 scale-[.4]
+    <div class="flex md:gap-10 gap-2 justify-center items-center w-fit h-64 sm:mt-28 lg:scale-90 sm:scale-75 scale-[.4]
         transition-all">
         <!-- Cards -->
         {#each countdown as count(count.unit)}
