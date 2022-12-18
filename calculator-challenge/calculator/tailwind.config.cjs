@@ -15,6 +15,7 @@ module.exports = {
         'f-key': 'hsl(30, 25%, 89%)',
         'f-key-shadow': 'hsl(28, 16%, 65%)',
         'f-text': 'hsl(221, 14%, 31%)',
+        'f-hover': '',
         // Theme Two
         's-main': 'hsl(0, 0%, 90%)',
         's-toggle': 'hsl(0, 5%, 81%)',
@@ -26,6 +27,7 @@ module.exports = {
         's-key': 'hsl(45, 7%, 89%)',
         's-key-shadow': 'hsl(35, 11%, 61%)',
         's-text': 'hsl(60, 10%, 19%)',
+        's-hover': '',
         // Theme Three
         't-main': 'hsl(268, 75%, 9%)',
         't-secondary': 'hsl(268, 71%, 12%)',
@@ -36,12 +38,17 @@ module.exports = {
         't-key': 'hsl(268, 47%, 21%)',
         't-key-shadow': 'hsl(290, 70%, 36%)',
         't-text': 'hsl(52, 100%, 62%)',
+        't-hover': '',
         'very-dark-blue': 'hsl(198, 20%, 13%)'
       },
       fontFamily: {
         'spartan': '"League Spartan"'
+      },
+      screens: {
+        'xxs': '365px'
       }
+      
     }
   },
-  plugins: [require("daisyui")]
+  plugins: []
 };
