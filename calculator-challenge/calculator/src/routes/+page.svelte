@@ -80,16 +80,20 @@
                 <div class="w-[72px] h-[25px] {toggle} rounded-full flex justify-center items-center hover:cursor-pointer
                     transition-all duration-200">
                     <!-- Theme One -->
-                    <button class="h-full w-full rounded-l-full relative" 
-                        on:click={() => handleThemeToggle(1)}>
-                    </button>
+                    <div class="h-full w-full rounded-l-full relative" 
+                        on:click={() => handleThemeToggle(1)}
+                        on:keydown={() => handleThemeToggle(1)}>
+                        
+                    </div>
                     <!-- Theme Two -->
-                    <button class="h-full w-full relative" 
-                        on:click={() => handleThemeToggle(2)}>
-                    </button>
+                    <div class="h-full w-full relative" 
+                        on:click={() => handleThemeToggle(2)}
+                        on:keydown={() => handleThemeToggle(2)}>
+                    </div>
                     <!-- Theme Three -->
                     <button class="h-full w-full rounded-r-full relative" 
-                        on:click={() => handleThemeToggle(3)}>
+                        on:click={() => handleThemeToggle(3)}
+                        on:keydown={() => handleThemeToggle(3)}>
                     </button>
 
                     <!-- Theme key -->
