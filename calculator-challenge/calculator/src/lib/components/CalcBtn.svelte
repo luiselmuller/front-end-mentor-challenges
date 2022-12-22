@@ -42,7 +42,7 @@
         <button type="button" class="sm:rounded-xl rounded-lg {height} {width} {specialKeyBg} text-white {funcHover}
             transition-all duration-100 xxs:text-[28px] text-[22px] z-10 relative active:translate-y-0.5"
             on:click={() => handleCalc(text)}>
-            <h2 class="translate-y-[2px]">{text}</h2>       
+            <span class="translate-y-[2px]">{text}</span>       
         </button>
         <div class="rounded-xl {height} {width} {funcShadow} absolute xxs:-translate-y-[58px] -translate-y-[51px] z-0"></div>
     </div>
@@ -52,7 +52,7 @@
         <button type="button" class="sm:rounded-xl rounded-lg {height} {width} {background} {textColor} {hoverColor} {fontSize}
             transition-all duration-100 z-10 relative active:translate-y-0.5"
             on:click={() => handleCalc(text)}>
-            <h2 class="translate-y-[4px]">{text}</h2>         
+            <span class="translate-y-[4px]">{text}</span>         
         </button>
         <div class="rounded-xl {height} {width} {shadow} absolute xxs:-translate-y-[58px] -translate-y-[51px] z-0">  </div>
     </div>
