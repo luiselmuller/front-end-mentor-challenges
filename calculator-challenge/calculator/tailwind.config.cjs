@@ -15,7 +15,9 @@ module.exports = {
         'f-key': 'hsl(30, 25%, 89%)',
         'f-key-shadow': 'hsl(28, 16%, 65%)',
         'f-text': 'hsl(221, 14%, 31%)',
-        'f-hover': '',
+        'f-key-hover': 'hsl(30, 50%, 100%)',
+        'f-func-key-hover': 'hsl(225, 30%, 70%)',
+        'f-toggle-key-hover': 'hsl(6, 80%, 70%)',
         // Theme Two
         's-main': 'hsl(0, 0%, 90%)',
         's-toggle': 'hsl(0, 5%, 81%)',
@@ -27,7 +29,9 @@ module.exports = {
         's-key': 'hsl(45, 7%, 89%)',
         's-key-shadow': 'hsl(35, 11%, 61%)',
         's-text': 'hsl(60, 10%, 19%)',
-        's-hover': '',
+        's-key-hover': 'hsl(30, 50%, 100%)',
+        's-func-key-hover': 'hsl(185, 50%, 60%)',
+        's-toggle-key-hover': 'hsl(25, 80%, 60%)',
         // Theme Three
         't-main': 'hsl(268, 75%, 9%)',
         't-secondary': 'hsl(268, 71%, 12%)',
@@ -38,7 +42,9 @@ module.exports = {
         't-key': 'hsl(268, 47%, 21%)',
         't-key-shadow': 'hsl(290, 70%, 36%)',
         't-text': 'hsl(52, 100%, 62%)',
-        't-hover': '',
+        't-key-hover': 'hsl(268, 55%, 50%)',
+        't-func-key-hover': 'hsl(281, 95%, 40%)',
+        't-toggle-key-hover': 'hsl(176, 90%, 76%)',
         'very-dark-blue': 'hsl(198, 20%, 13%)'
       },
       fontFamily: {
