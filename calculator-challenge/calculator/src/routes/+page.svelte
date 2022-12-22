@@ -94,7 +94,7 @@
                     <div class="h-full w-full rounded-r-full relative" 
                         on:click={() => handleThemeToggle(3)}
                         on:keydown={() => handleThemeToggle(3)}>
-                    </button>
+                    </div>
 
                     <!-- Theme key -->
                     <div class="{toggleKey} h-[17px] w-[17px] m-[5px] rounded-full absolute {$theme === 2 ? '' : 
