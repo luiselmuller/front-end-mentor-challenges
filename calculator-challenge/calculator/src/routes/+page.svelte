@@ -91,7 +91,7 @@
                         on:keydown={() => handleThemeToggle(2)}>
                     </div>
                     <!-- Theme Three -->
-                    <button class="h-full w-full rounded-r-full relative" 
+                    <div class="h-full w-full rounded-r-full relative" 
                         on:click={() => handleThemeToggle(3)}
                         on:keydown={() => handleThemeToggle(3)}>
                     </button>
