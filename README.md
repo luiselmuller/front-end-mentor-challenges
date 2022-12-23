@@ -1,6 +1,6 @@
 # front-end-mentor-challenges
-[Launch countdown timer](https://countdown-challenge-frontendmentor.vercel.app/)
-[Calculator](https://front-end-mentor-calculator.vercel.app/)
+*[Launch countdown timer](https://countdown-challenge-frontendmentor.vercel.app/)
+*[Calculator](https://front-end-mentor-calculator.vercel.app/)
 <br>
 will update all of the readme files soon
 
